@@ -31,9 +31,10 @@ const cartSlice = createSlice({
 			targetItem.amount -= 1;
 		},
 		calculateTotals(state) {
-			state.total = state.cartItems
-				.reduce((acc, item) => acc + item.amount * item.price, 0)
-				.toFixed(2);
+			state.total = state.cartItems.reduce(
+				(acc, item) => acc + item.amount * item.price,
+				0
+			);
 			state.amount = state.cartItems.reduce(
 				(acc, item) => acc + item.amount,
 				0
